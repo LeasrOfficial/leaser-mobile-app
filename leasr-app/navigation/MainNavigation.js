@@ -14,6 +14,7 @@ import { Ionicons, MaterialCommunityIcons, Feather, EvilIcons } from '@expo/vect
 
 import Colors from '../constants/colors';
 
+
 const MainTabNavigator = createBottomTabNavigator({
     Maps: {
         screen: MapScreen,

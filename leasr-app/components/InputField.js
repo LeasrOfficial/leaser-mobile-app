@@ -6,8 +6,9 @@ const InputField = props => {
     return (
         <View style={styles.container}>
             <TextInput 
-                autoCorrect={false}
+                {...props}
                 style={[props.customStyle, styles.input]}
+                
             />
         </View>
     );
