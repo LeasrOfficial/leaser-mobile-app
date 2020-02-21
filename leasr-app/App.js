@@ -2,20 +2,24 @@ import React, { useEffect } from 'react';
 import { StyleSheet, Platform } from 'react-native';
 
 import * as Font from 'expo-font';
-import MainNavigation from './navigation/MainNavigation';
+import MainNavigation  from './navigation/MainNavigation';
 import LoginSignup from './screens/login/LoginSignupScreen';
 
-export default function App() {
-  
-  
-  return (
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-      //<MainNavigation />
-      //<Login />
-      <LoginSignup />
-  );
-}
+const App = createStackNavigator({
+    FirstPage: { screen: LoginSignup }, 
+    SecondPage: { screen: MainNavigation }, 
+  },
+  {
+    initialRouteParams: 'FirstPage',
+    headerMode: 'none'
+  }
+);
 
 const styles = StyleSheet.create({
 
 });
+
+export default createAppContainer(App);

@@ -1,11 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native';
+import MessagingNavigation from '../navigation/MessagingNavigation';
 
 const MessagingScreen = props => {
     return (
-        <View style={styles.screen}>
-            <Text>MessagingScreen Screen</Text>
-        </View>
+        <MessagingNavigation />
     );
 };
 

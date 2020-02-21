@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableHighlight, Image, TextInput } from 'react-native';
 import Colors from '../../constants/colors';
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { AntDesign, EvilIcons, FontAwesome } from '@expo/vector-icons';
 
 import InputField from '../../components/InputField';
@@ -12,8 +9,9 @@ import RoundButton from '../../components/RoundButton';
 import RoundButtonIcon from '../../components/buttons/RoundButtonIcon';
 import MainTabNavigator from '../../navigation/MainNavigation';
 
-
 const LoginScreen = props => {
+    const { navigate } = props.navigation;
+
     return (
         <ScrollView style={styles.screen}>
             <View>
@@ -37,7 +35,7 @@ const LoginScreen = props => {
                     <RoundButton 
                         buttonStyle={styles.button} 
                         text={'Continue'} 
-                        pressed={props.pressed}
+                        pressed={() => navigate('SecondPage')}
                         />
                     <View style={styles.transition}>
                         <Text style={styles.transitionText}>OR</Text>

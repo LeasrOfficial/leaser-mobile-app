@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native'
+import MapView from 'react-native-maps';
 
 const MapScreen = props => {
     return (
-        <View style={styles.screen}>
-            <Text>Map Screen</Text>
-        </View>
+        <MapView 
+        style={{flex: 1}}        
+        region={{          
+            latitude: 37.354107,          
+            longitude: -121.955238,          
+            latitudeDelta: 0.0922,          
+            longitudeDelta: 0.0421        
+        }}        
+        showsUserLocation={true}      
+        />
     );
 };
 
