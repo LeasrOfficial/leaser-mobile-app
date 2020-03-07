@@ -33,7 +33,7 @@ const MapScreen = props => {
                             style={styles.search} 
                         /> 
                     </View>
-                    <View>
+                    <View style={styles.filters}>
 
                     </View>
                 </Callout>
@@ -63,6 +63,9 @@ const styles = StyleSheet.create({
         
     },
     search: {
+    },
+    filters: {
+        backgroundColor: 'white',
     }
 });
 
