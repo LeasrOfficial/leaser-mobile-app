@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import { View, Text, ScrollView, StyleSheet, TouchableHighlight, Image, TextInput } from 'react-native';
+import React from 'react';
+import { View, Text, ScrollView, StyleSheet, Image, } from 'react-native';
 import Colors from '../../constants/colors';
-import { AntDesign, EvilIcons, FontAwesome } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 import InputField from '../../components/InputField';
-import Button from '../../components/RoundButton';
 import RoundButton from '../../components/RoundButton';
 import RoundButtonIcon from '../../components/buttons/RoundButtonIcon';
-import MainTabNavigator from '../../navigation/MainNavigation';
+import { Button } from 'react-native-paper';
 
 const LoginScreen = props => {
     const { navigate } = props.navigation;
@@ -35,8 +34,8 @@ const LoginScreen = props => {
                     <RoundButton 
                         buttonStyle={styles.button} 
                         text={'Continue'} 
-                        pressed={() => navigate('SecondPage')}
-                        />
+                        pressed={() => navigate('FourthPage')}
+                    />
                     <View style={styles.transition}>
                         <Text style={styles.transitionText}>OR</Text>
                     </View>
@@ -47,8 +46,6 @@ const LoginScreen = props => {
                             text={'Continue with Facebook'}
                             icon={<FontAwesome name='facebook' size={20} style={{color: 'white', position: 'relative', left: 30, zIndex: 8}}/>}
                             underlay={'#3b5998'}
-                            
-                            
                         />
                         <RoundButtonIcon 
                             buttonStyle={styles.buttonApple} 
@@ -65,7 +62,7 @@ const LoginScreen = props => {
                             underlay={'white'}
                         />
                         </View>
-                        <Text>Already have an account?</Text>
+                        <Text onPress={() => navigate('SecondPage')}>Already have an account?</Text>
                 </View>
             </View>
         </ScrollView>
